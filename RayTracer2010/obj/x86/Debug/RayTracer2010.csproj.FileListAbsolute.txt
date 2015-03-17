@@ -3,3 +3,5 @@ D:\mystudies\viza656\Josiah\RayTracer2010\bin\Debug\RayTracer2010.pdb
 D:\mystudies\viza656\Josiah\RayTracer2010\obj\x86\Debug\RayTracer2010.exe
 D:\mystudies\viza656\Josiah\RayTracer2010\obj\x86\Debug\RayTracer2010.pdb
 D:\mystudies\viza656\Josiah\RayTracer2010\obj\x86\Debug\RayTracer2010.csprojResolveAssemblyReference.cache
+C:\Users\Kumar\Documents\GitHub\viza656\RayTracer2010\obj\x86\Debug\RayTracer2010.exe
+C:\Users\Kumar\Documents\GitHub\viza656\RayTracer2010\obj\x86\Debug\RayTracer2010.pdb
