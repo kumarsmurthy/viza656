@@ -23,6 +23,7 @@ namespace RayTracer2010
             Bitmap bmp = new Bitmap(width, height);
 
             // get the orientation of the camera
+            
             matrix4d rotmat = orient.getMatrix();
             vect3d rt = new vect3d(rotmat.m[0], rotmat.m[1], rotmat.m[2]);
             vect3d up = new vect3d(rotmat.m[4], rotmat.m[5], rotmat.m[6]);

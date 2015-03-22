@@ -24,23 +24,29 @@ namespace RayTracer2010
                 width = 600,
                 height = 400,
                 subsamples = 1,
-                fov_y = 40,
-                pos = new vect3d(0, .75, 5)
+                fov_y = 60,
+                pos = new vect3d(0, 1, 12)
             };
 
             var occluder = new GroupList();
             var blueShader = new ShadowShader();
             blueShader.diffuse_color = new vect3d(0.2, 0.5, 0.8);
-            var plane = new Plane(new vect3d(0, 0, 0), new vect3d(1, 0, 0), new vect3d(0, 1, 0), new TextureSphereShader("tiles.jpg"));
-            //var plane = new Plane(new vect3d(0, 0, 0), new vect3d(1,0,0), new vect3d(1, 1, 0), new NoiseShader());
+            //var plane = new Plane(new vect3d(0, 0, 0), new vect3d(1, 0, 0), new vect3d(0, 1, 0), new TextureSphereShader("tiles.jpg"));
+            var plane = new Plane(new vect3d(0, 0, 0), new vect3d(1,0,0), new vect3d(1, 1, 0), new NoiseShader());
             plane.x *= .3;
             plane.y *= .3;
 
-            occluder.add(plane);
+            //occluder.add(plane);
+
+            var plane2 = new Plane(new vect3d(0, 0, 0), new vect3d(1, 0, 0), new vect3d(1, 0, -1), new NoiseShader());
+            plane2.x *= .3;
+            plane2.y *= .3;
+            //occluder.add(plane2);
+
 
            // occluder.add(new Sphere(new vect3d(0,.5,0), .5, new ShadowShader()));
-            occluder.add(new Sphere(new vect3d(0, .5, 0), .5, new TextureSphereShader("globe1.jpg")));
-            //occluder.add(new Sphere(new vect3d(0, .5, 0), 0.5, new NoiseShader()));
+            //occluder.add(new Sphere(new vect3d(0, .5, 0), .5, new TextureSphereShader("globe1.jpg")));
+            occluder.add(new Sphere(new vect3d(0, .5, 0), 5, new NoiseShader()));
             //GroupList obj = load_obj("../../../../resources/models/armadilloman2.obj", new ShadowShader());
            // occluder.add(new GroupTree(obj.list, obj.shader));
 
@@ -48,8 +54,10 @@ namespace RayTracer2010
             {
                 occluder = occluder
             };
-            scene.lights.Add(new Light() { color = new vect3d(1,1, 1) * 60, pos = new vect3d(-4, 4, 8) });
-           // scene.lights.Add(new Light() { color = new vect3d(1, 1, 1) * 40, pos = new vect3d(1, 15, 10) });
+            //scene.lights.Add(new Light() { color = new vect3d(1, 1, 1) * 60, pos = new vect3d(-2, 8, 2) });
+            scene.lights.Add(new Light() { color = new vect3d(1,1, 1) * 80, pos = new vect3d(-4, 10, 8) });
+           scene.lights.Add(new Light() { color = new vect3d(1, 1, 1) * 30, pos = new vect3d(4, -20, 8) });
+           scene.lights.Add(new Light() { color = new vect3d(1, 1, 1) * 5, pos = new vect3d(4, 10, 8) });
 
             //--------------------------------------------------------------------------------
             // Render the scene
